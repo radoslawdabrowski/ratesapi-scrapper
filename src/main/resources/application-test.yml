@@ -1,0 +1,4 @@
+external:
+  rates:
+    api:
+      baseUrl: http://localhost:9561

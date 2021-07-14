@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RatesapiScrapperApplication {
+public class RatesApiScrapperApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RatesapiScrapperApplication.class, args);
+		SpringApplication.run(RatesApiScrapperApplication.class, args);
 	}
 
 }
