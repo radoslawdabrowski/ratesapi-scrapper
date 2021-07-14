@@ -37,9 +37,11 @@ class ExchangeRatesController {
     @GetMapping("/list")
     @ResponseStatus(HttpStatus.OK)
     Map<LocalDate, List<ExchangeRateDto>> getRates(
-        @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFrom,
-        @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateTo
+        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFrom,
+        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateTo
     ) {
+        dateFrom = dateFrom == null ? LocalDate.now().minusYears(1) : dateFrom;
+        dateTo = dateTo == null ? LocalDate.now(): dateTo;
         return exchangeRatesService.getRates(dateFrom, dateTo);
     }
 

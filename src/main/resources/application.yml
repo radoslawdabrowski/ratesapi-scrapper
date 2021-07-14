@@ -11,8 +11,8 @@ external:
   rates:
     api:
       baseUrl: https://api.exchangeratesapi.io/v1
-      accessKey: ${access_key:test}
-      plan: free
+      accessKey: ${access_key}
+      plan: ${rates_api_plan:free}
 feign:
   client:
     config:
